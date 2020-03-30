@@ -9,6 +9,8 @@ using System.IO.Compression;
 using System.IO;
 using HtmlAgilityPack;
 using System.Text.RegularExpressions;
+using System.Threading;
+using System.Diagnostics;
 
 namespace PushToKindle
 {
@@ -16,88 +18,77 @@ namespace PushToKindle
     {
         static void Main(string[] args)
         {
-            RequestOptions options = new RequestOptions();
-            options.Uri = new Uri("https://www.biquge5200.cc/130_130510/");
-            IWebProxy proxy = GetProxy();
+            #region old
+            //RequestOptions options = new RequestOptions();
+            //options.Uri = new Uri("https://www.biquge5200.cc/130_130510/");
+            //IWebProxy proxy = GetProxy();
+            //string result = string.Empty;
+            ////IWebProxy proxy =
+            //var request = (HttpWebRequest)WebRequest.Create(options.Uri);
+            ////POST大于1024字节时,POST请求分成两步
+            ////发送一个请求询问Server是否接受 Exprct:100 -continue
+            ////不是所有Server都会响应 100 -continue; 此时就会出现错误
+            //request.ServicePoint.Expect100Continue = false;
+            //request.ServicePoint.UseNagleAlgorithm = false;
+            //if (!string.IsNullOrEmpty(options.XHRParams))
+            //{
+            //    request.AllowWriteStreamBuffering = true;
+            //}
+            //else
+            //{
+            //    request.AllowWriteStreamBuffering = false;
+            //}
+            //request.Headers.Add(HttpRequestHeader.AcceptEncoding, "gzip, deflate, br");
+            //request.ContentType = options.ContentType;
+            //request.AllowAutoRedirect = options.AllowAutoRedirect;
+            //request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36";
+            //request.Timeout = options.Timeout;
+            //request.KeepAlive = options.KeepAlive;
+            //if (!string.IsNullOrEmpty(options.Referer)) request.Referer = options.Referer;//返回上一级历史链接
+            //request.Method = options.Method="GET";
+            //if (proxy != null) request.Proxy = proxy;//设置代理服务器IP，伪装请求地址
+            //if (!string.IsNullOrEmpty(options.RequestCookies)) request.Headers[HttpRequestHeader.Cookie] = options.RequestCookies;
+            //request.ServicePoint.ConnectionLimit = options.ConnectionLimit;//定义最大连接数
+            //if (options.WebHeader != null && options.WebHeader.Count > 0) request.Headers.Add(options.WebHeader);//添加头部信息
+            //if (!string.IsNullOrEmpty(options.XHRParams))//如果是POST请求，加入POST数据
+            //{
+            //    byte[] buffer = Encoding.UTF8.GetBytes(options.XHRParams);
+            //    if (buffer != null)
+            //    {
+            //        request.ContentLength = buffer.Length;
+            //        request.GetRequestStream().Write(buffer, 0, buffer.Length);
+            //    }
+            //}
+            #endregion
+            string url = "https://www.biquge5200.cc/130_130510/";
+            //url = "https://www.biquge5200.cc/130_130510/171445544.html";
             string result = string.Empty;
-            //IWebProxy proxy =
-            var request = (HttpWebRequest)WebRequest.Create(options.Uri);
-            //POST大于1024字节时,POST请求分成两步
-            //发送一个请求询问Server是否接受 Exprct:100 -continue
-            //不是所有Server都会响应 100 -continue; 此时就会出现错误
-            request.ServicePoint.Expect100Continue = false;
-            request.ServicePoint.UseNagleAlgorithm = false;
-            if (!string.IsNullOrEmpty(options.XHRParams))
+            List<BookContent> books = new List<BookContent>();
+            var request = IniRequest(url);
+            result = GetUzipResponse(request);
+            books = GetNextUrl(result);
+            //Thread thread = new Thread();
+            //thread.IsBackground = true;
+            //thread.Start();
+            Stopwatch sp = new Stopwatch();
+            sp.Start();
+            foreach (BookContent book in books)
             {
-                request.AllowWriteStreamBuffering = true;
-            }
-            else
-            {
-                request.AllowWriteStreamBuffering = false;
-            }
-            request.Headers.Add(HttpRequestHeader.AcceptEncoding, "gzip, deflate, br");
-            request.ContentType = options.ContentType;
-            request.AllowAutoRedirect = options.AllowAutoRedirect;
-            request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36";
-            request.Timeout = options.Timeout;
-            request.KeepAlive = options.KeepAlive;
-            if (!string.IsNullOrEmpty(options.Referer)) request.Referer = options.Referer;//返回上一级历史链接
-            request.Method = options.Method="GET";
-            if (proxy != null) request.Proxy = proxy;//设置代理服务器IP，伪装请求地址
-            if (!string.IsNullOrEmpty(options.RequestCookies)) request.Headers[HttpRequestHeader.Cookie] = options.RequestCookies;
-            request.ServicePoint.ConnectionLimit = options.ConnectionLimit;//定义最大连接数
-            if (options.WebHeader != null && options.WebHeader.Count > 0) request.Headers.Add(options.WebHeader);//添加头部信息
-            if (!string.IsNullOrEmpty(options.XHRParams))//如果是POST请求，加入POST数据
-            {
-                byte[] buffer = Encoding.UTF8.GetBytes(options.XHRParams);
-                if (buffer != null)
+                if (!string.IsNullOrEmpty(book.Content))
                 {
-                    request.ContentLength = buffer.Length;
-                    request.GetRequestStream().Write(buffer, 0, buffer.Length);
+                    Console.WriteLine(book.chapter);
+                    book.Content = GetUzipResponse(IniRequest(book.Content));
+                    Thread.Sleep(300);
                 }
             }
-            using (var response = (HttpWebResponse)request.GetResponse())
-            {
-                ////获取请求响应
-                //foreach (Cookie cookie in response.Cookies)
-                //    options.CookiesContainer.Add(cookie);//将Cookie加入容器，保存登录状态
-                if (response.ContentEncoding.ToLower().Contains("gzip"))//解压
-                {
-                    using (GZipStream stream = new GZipStream(response.GetResponseStream(), CompressionMode.Decompress))
-                    {
-                        using (StreamReader reader = new StreamReader(stream,Encoding.GetEncoding("GBK")))
-                        {
-                            result = reader.ReadToEnd();
-                        }
-                    }
-                }
-                else if (response.ContentEncoding.ToLower().Contains("deflate"))//解压
-                {
-                    using (DeflateStream stream = new DeflateStream(response.GetResponseStream(), CompressionMode.Decompress))
-                    {
-                        using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
-                        {
-                            result = reader.ReadToEnd();
-                        }
-                    }
-                }
-                else
-                {
-                    using (Stream stream = response.GetResponseStream())//原始
-                    {
-                        using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
-                        {
-                            result = reader.ReadToEnd();
-                        }
-                    }
-                }
-            }
-            request.Abort();
-            //Console.WriteLine(result);
-            GetNextUrl(result);
+            Console.WriteLine($"加载{books.Count}耗时{sp.Elapsed.TotalSeconds}");
             Console.ReadKey();
         }
 
+        public static void CureateHtml()
+        {
+
+        }
 
         /// <summary>
         /// 代理访问
@@ -130,13 +121,33 @@ namespace PushToKindle
             return webProxy;
         }
 
+        /// <summary>
+        /// 初始化请求
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        public static HttpWebRequest IniRequest(string url)
+        {
+            var request = (HttpWebRequest)WebRequest.Create(url);
+            request.ServicePoint.Expect100Continue = false;
+            request.ServicePoint.UseNagleAlgorithm = false;
+            request.Method = "get";
+            request.Headers.Add(HttpRequestHeader.AcceptEncoding, "gzip, deflate, br");
+            request.ContentType = "application/x-www-form-urlencoded";
+            request.AllowAutoRedirect = false;
+            request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36";
+            request.Timeout = 5000;
+            request.KeepAlive = false;
+            request.ServicePoint.ConnectionLimit = int.MaxValue;
+            return request;
+        }
 
         /// <summary>
         /// 获取目录和章节URL
         /// </summary>
         /// <param name="htmlValue"></param>
         /// <returns></returns>
-        public static string  GetNextUrl(string htmlValue)
+        public static List<BookContent>  GetNextUrl(string htmlValue)
         {
             List<BookContent> bookContents = new List<BookContent>();
             var doc = new HtmlDocument();
@@ -154,10 +165,21 @@ namespace PushToKindle
                 }
                 num++;
             }
-            bookContents[1].Content
-            return "";
+            return bookContents;
         }
 
+        /// <summary>
+        /// 获取小说章节内容
+        /// </summary>
+        /// <param name="html"></param>
+        /// <returns></returns>
+        public static string GetContent(string html)
+        {
+            var doc = new HtmlDocument();
+            doc.LoadHtml(html);
+            HtmlNode nodes = doc.DocumentNode.SelectSingleNode("//div[@id='content']");
+            return nodes.InnerHtml;
+        }
 
         /// <summary>
         /// 返回响应的内容(解压后的压)
@@ -200,6 +222,7 @@ namespace PushToKindle
                     }
                 }
             }
+            request.Abort();
             return result;
         }
 

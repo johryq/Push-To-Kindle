@@ -2,5 +2,19 @@
 
 ## KindleGen的坑
 
-错误(htmlparser):E19001: 在内容文件中没有发现 BODY 标记。
-<item id="text" media-type="text/x-oeb1-document" href="index.html"></item> media-type="text/css"
+1.`错误(htmlparser):E19001: 在内容文件中没有发现 BODY 标记。`
+
+```xml
+<item id="text" media-type="text/x-oeb1-document" href="index.html"></item>
+```
+
+> media-type属性错误 应该为 `text/css`
+
+2.HTMl中文乱码  
+
+Charset应该设置成
+
+``` html
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+```
