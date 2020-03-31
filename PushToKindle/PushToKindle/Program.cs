@@ -18,6 +18,9 @@ namespace PushToKindle
     {
         static void Main(string[] args)
         {
+            HtmlToKindle ht = new HtmlToKindle();
+            //ht.CureatHtml(html,books);
+
             #region old
             //RequestOptions options = new RequestOptions();
             //options.Uri = new Uri("https://www.biquge5200.cc/130_130510/");
@@ -65,7 +68,9 @@ namespace PushToKindle
             string result = string.Empty;
             List<BookContent> books = new List<BookContent>();
             var request = IniRequest(url);
+            //获取网页
             result = GetUzipResponse(request);
+            //获取目录URL和章节名
             books = GetNextUrl(result);
             //Thread thread = new Thread();
             //thread.IsBackground = true;
@@ -85,10 +90,6 @@ namespace PushToKindle
             Console.ReadKey();
         }
 
-        public static void CureateHtml()
-        {
-
-        }
 
         /// <summary>
         /// 代理访问
@@ -152,6 +153,10 @@ namespace PushToKindle
             List<BookContent> bookContents = new List<BookContent>();
             var doc = new HtmlDocument();
             doc.LoadHtml(htmlValue);
+
+            BookInfo.BookName = doc.DocumentNode.SelectSingleNode("//div[@id='info']/h1").InnerText;
+            BookInfo.Auther = doc.DocumentNode.SelectSingleNode("//div[@id='info']/p").InnerText.Replace("作&nbsp;&nbsp;&nbsp;&nbsp;者：", "");
+
             HtmlNodeCollection nodes = doc.DocumentNode.SelectNodes("//div[@id='list']/dl/dd/a");
             int num = 2;
             foreach(HtmlNode node in nodes)
@@ -178,6 +183,7 @@ namespace PushToKindle
             var doc = new HtmlDocument();
             doc.LoadHtml(html);
             HtmlNode nodes = doc.DocumentNode.SelectSingleNode("//div[@id='content']");
+            HtmlNode infoNode = doc.DocumentNode.SelectSingleNode("");
             return nodes.InnerHtml;
         }
 

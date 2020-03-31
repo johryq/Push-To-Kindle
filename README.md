@@ -6,6 +6,12 @@
 
 ```xml
 <item id="text" media-type="text/x-oeb1-document" href="index.html"></item>
+``` 
+
+或者
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
 ```
 
 > media-type属性错误 应该为 `text/css`
