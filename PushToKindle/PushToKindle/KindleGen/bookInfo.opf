@@ -9,7 +9,7 @@
 			<!-- <dc:Copyrights>版权</dc:Copyrights> -->
 			<!-- <dc:Publisher>作者</dc:Publisher> -->
 			<x-metadata>
-				 <EmbeddedCover>images/1.jpg</EmbeddedCover> 
+				 <!--<EmbeddedCover>images/1.jpg</EmbeddedCover>--> 
 			</x-metadata>
 		</dc-metadata>
 	</metadata>

@@ -77,15 +77,22 @@ namespace PushToKindle
             //thread.Start();
             Stopwatch sp = new Stopwatch();
             sp.Start();
+            int x = 0;
             foreach (BookContent book in books)
             {
                 if (!string.IsNullOrEmpty(book.Content))
                 {
                     Console.WriteLine(book.chapter);
-                    book.Content = GetUzipResponse(IniRequest(book.Content));
+                    book.Content = GetContent(GetUzipResponse(IniRequest(book.Content)));
                     Thread.Sleep(300);
+                    x++;
                 }
+                //if (x > 10)
+                //{
+                //    break;
+                //}
             }
+            ht.CureatHtml(books);
             Console.WriteLine($"加载{books.Count}耗时{sp.Elapsed.TotalSeconds}");
             Console.ReadKey();
         }
@@ -182,9 +189,14 @@ namespace PushToKindle
         {
             var doc = new HtmlDocument();
             doc.LoadHtml(html);
-            HtmlNode nodes = doc.DocumentNode.SelectSingleNode("//div[@id='content']");
-            HtmlNode infoNode = doc.DocumentNode.SelectSingleNode("");
-            return nodes.InnerHtml;
+            HtmlNodeCollection nodes = doc.DocumentNode.SelectNodes("//div[@id='content']/p");
+            StringBuilder sb = new StringBuilder();
+            foreach(HtmlNode node in nodes)
+            {
+                sb.Append($"<p> {node.InnerHtml.Trim()} </p>");
+            }
+
+            return sb.ToString() ;
         }
 
         /// <summary>

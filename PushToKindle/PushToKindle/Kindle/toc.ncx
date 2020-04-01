@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<!DOCTYPE ncx PUBLIC "-//NISO//DTD ncx 2005-1//EN" 
+   "http://www.daisy.org/z3986/2005/ncx-2005-1.dtd">
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1">
+  <head>
+  </head>
+  <docTitle>
+    <text>超品命师</text>
+  </docTitle>
+<navMap>
+ <!--<navPoint id="navpoint-1" playOrder="1"><navLabel><text>开始  </text></navLabel><content src="text.html#top"/></navPoint> 
+<navPoint id="navpoint-2" playOrder="2"><navLabel><text>第一章</text></navLabel><content src="index.html#id1"/></navPoint>-->
+  <navPoint id="navpoint - 1" playOrder="1"><navLabel><text> 第一章 死而复生 </text></navLabel><content src="index.html#dir1"/></navPoint>
+<navPoint id="navpoint - 2" playOrder="2"><navLabel><text> 第二章 凶狮舞爪 </text></navLabel><content src="index.html#dir2"/></navPoint>
+<navPoint id="navpoint - 3" playOrder="3"><navLabel><text> 第三章 自污的原因 </text></navLabel><content src="index.html#dir3"/></navPoint>
+<navPoint id="navpoint - 4" playOrder="4"><navLabel><text> 第四章 王氏棺材铺 </text></navLabel><content src="index.html#dir4"/></navPoint>
+<navPoint id="navpoint - 5" playOrder="5"><navLabel><text> 第五章 重如山，肩上飘 </text></navLabel><content src="index.html#dir5"/></navPoint>
+<navPoint id="navpoint - 6" playOrder="6"><navLabel><text> 第六章 </text></navLabel><content src="index.html#dir6"/></navPoint>
+<navPoint id="navpoint - 7" playOrder="7"><navLabel><text> 第七章 接个活 </text></navLabel><content src="index.html#dir7"/></navPoint>
+<navPoint id="navpoint - 8" playOrder="8"><navLabel><text> 第八章 魂魄非一物 </text></navLabel><content src="index.html#dir8"/></navPoint>
+<navPoint id="navpoint - 9" playOrder="9"><navLabel><text> 第九章 运势之光 </text></navLabel><content src="index.html#dir9"/></navPoint>
+<navPoint id="navpoint - 10" playOrder="10"><navLabel><text> 第十章 因果 </text></navLabel><content src="index.html#dir10"/></navPoint>
+<navPoint id="navpoint - 11" playOrder="11"><navLabel><text> 第11章 蕴阴汤 </text></navLabel><content src="index.html#dir11"/></navPoint>
+<navPoint id="navpoint - 12" playOrder="12"><navLabel><text> 第12章 山医命相卜 </text></navLabel><content src="index.html#dir12"/></navPoint>
+<navPoint id="navpoint - 13" playOrder="13"><navLabel><text> 第13章 大义凛然刘子健 </text></navLabel><content src="index.html#dir13"/></navPoint>
+<navPoint id="navpoint - 14" playOrder="14"><navLabel><text> 第14章 开始飙演技（求推荐票） </text></navLabel><content src="index.html#dir14"/></navPoint>
+<navPoint id="navpoint - 15" playOrder="15"><navLabel><text> 第15章 无形脑补，最为致命 </text></navLabel><content src="index.html#dir15"/></navPoint>
+<navPoint id="navpoint - 16" playOrder="16"><navLabel><text> 第16章 巫道佛皆可拜 </text></navLabel><content src="index.html#dir16"/></navPoint>
+<navPoint id="navpoint - 17" playOrder="17"><navLabel><text> 第17章 喜神术 </text></navLabel><content src="index.html#dir17"/></navPoint>
+<navPoint id="navpoint - 18" playOrder="18"><navLabel><text> 第18章 生活需要绿 </text></navLabel><content src="index.html#dir18"/></navPoint>
+<navPoint id="navpoint - 19" playOrder="19"><navLabel><text> 第19章 （求推荐票） </text></navLabel><content src="index.html#dir19"/></navPoint>
+<navPoint id="navpoint - 20" playOrder="20"><navLabel><text> 第20章 五弊三缺 </text></navLabel><content src="index.html#dir20"/></navPoint>
+<navPoint id="navpoint - 21" playOrder="21"><navLabel><text> 第21章 麒麟子 </text></navLabel><content src="index.html#dir21"/></navPoint>
+<navPoint id="navpoint - 22" playOrder="22"><navLabel><text> 第22章 八字不轻言 </text></navLabel><content src="index.html#dir22"/></navPoint>
+<navPoint id="navpoint - 23" playOrder="23"><navLabel><text> 第23章 出发 </text></navLabel><content src="index.html#dir23"/></navPoint>
+<navPoint id="navpoint - 24" playOrder="24"><navLabel><text> 第24章 堪比周处 </text></navLabel><content src="index.html#dir24"/></navPoint>
+<navPoint id="navpoint - 25" playOrder="25"><navLabel><text> 第25章 先生更像恶霸 </text></navLabel><content src="index.html#dir25"/></navPoint>
+<navPoint id="navpoint - 26" playOrder="26"><navLabel><text> 第26章 这不可能 </text></navLabel><content src="index.html#dir26"/></navPoint>
+<navPoint id="navpoint - 27" playOrder="27"><navLabel><text> 新书第一个单章 </text></navLabel><content src="index.html#dir27"/></navPoint>
+<navPoint id="navpoint - 28" playOrder="28"><navLabel><text> 第27章 不死心 </text></navLabel><content src="index.html#dir28"/></navPoint>
+<navPoint id="navpoint - 29" playOrder="29"><navLabel><text> 第28章 </text></navLabel><content src="index.html#dir29"/></navPoint>
+<navPoint id="navpoint - 30" playOrder="30"><navLabel><text> 第29章 不情之请那就算了（签约加更） </text></navLabel><content src="index.html#dir30"/></navPoint>
+<navPoint id="navpoint - 31" playOrder="31"><navLabel><text> 第30章 风水先看人 </text></navLabel><content src="index.html#dir31"/></navPoint>
+<navPoint id="navpoint - 32" playOrder="32"><navLabel><text> 第31章 三月为满 </text></navLabel><content src="index.html#dir32"/></navPoint>
+<navPoint id="navpoint - 33" playOrder="33"><navLabel><text> 第32章 做个交易（打赏人数加更） </text></navLabel><content src="index.html#dir33"/></navPoint>
+<navPoint id="navpoint - 34" playOrder="34"><navLabel><text> 第33章 只能自己拿了 </text></navLabel><content src="index.html#dir34"/></navPoint>
+<navPoint id="navpoint - 35" playOrder="35"><navLabel><text> 第34章 留诗 </text></navLabel><content src="index.html#dir35"/></navPoint>
+<navPoint id="navpoint - 36" playOrder="36"><navLabel><text> 第35章 小女孩 </text></navLabel><content src="index.html#dir36"/></navPoint>
+<navPoint id="navpoint - 37" playOrder="37"><navLabel><text> 第36章 </text></navLabel><content src="index.html#dir37"/></navPoint>
+<navPoint id="navpoint - 38" playOrder="38"><navLabel><text> 第37章 狗刨 </text></navLabel><content src="index.html#dir38"/></navPoint>
+<navPoint id="navpoint - 39" playOrder="39"><navLabel><text> 第38章 找到位置 </text></navLabel><content src="index.html#dir39"/></navPoint>
+<navPoint id="navpoint - 40" playOrder="40"><navLabel><text> 第39章 寻根问祖 </text></navLabel><content src="index.html#dir40"/></navPoint>
+<navPoint id="navpoint - 41" playOrder="41"><navLabel><text> 第40章 空祠无人香亦旺 </text></navLabel><content src="index.html#dir41"/></navPoint>
+<navPoint id="navpoint - 42" playOrder="42"><navLabel><text> 第41章 看走眼人（推荐票加更） </text></navLabel><content src="index.html#dir42"/></navPoint>
+<navPoint id="navpoint - 43" playOrder="43"><navLabel><text> 第42章 相遇 </text></navLabel><content src="index.html#dir43"/></navPoint>
+<navPoint id="navpoint - 44" playOrder="44"><navLabel><text> 第43章 借宿 </text></navLabel><content src="index.html#dir44"/></navPoint>
+<navPoint id="navpoint - 45" playOrder="45"><navLabel><text> 第44章 </text></navLabel><content src="index.html#dir45"/></navPoint>
+<navPoint id="navpoint - 46" playOrder="46"><navLabel><text> 第45章 </text></navLabel><content src="index.html#dir46"/></navPoint>
+<navPoint id="navpoint - 47" playOrder="47"><navLabel><text> 第46章 祖屋（第三更求推荐票） </text></navLabel><content src="index.html#dir47"/></navPoint>
+<navPoint id="navpoint - 48" playOrder="48"><navLabel><text> 第47章 线索 </text></navLabel><content src="index.html#dir48"/></navPoint>
+<navPoint id="navpoint - 49" playOrder="49"><navLabel><text> 第48章 都是一家人 </text></navLabel><content src="index.html#dir49"/></navPoint>
+<navPoint id="navpoint - 50" playOrder="50"><navLabel><text> 第49章 入洞 </text></navLabel><content src="index.html#dir50"/></navPoint>
+<navPoint id="navpoint - 51" playOrder="51"><navLabel><text> 第50章 堪比皇宫的祖屋 </text></navLabel><content src="index.html#dir51"/></navPoint>
+<navPoint id="navpoint - 52" playOrder="52"><navLabel><text> 第51章 见过一样的门 </text></navLabel><content src="index.html#dir52"/></navPoint>
+<navPoint id="navpoint - 53" playOrder="53"><navLabel><text> 第52章 葬一扇门 </text></navLabel><content src="index.html#dir53"/></navPoint>
+<navPoint id="navpoint - 54" playOrder="54"><navLabel><text> 第53章 瓦西坝先祖身份 </text></navLabel><content src="index.html#dir54"/></navPoint>
+<navPoint id="navpoint - 55" playOrder="55"><navLabel><text> 第54章 木门的秘密 </text></navLabel><content src="index.html#dir55"/></navPoint>
+<navPoint id="navpoint - 56" playOrder="56"><navLabel><text> 第55章 喜神上身 </text></navLabel><content src="index.html#dir56"/></navPoint>
+<navPoint id="navpoint - 57" playOrder="57"><navLabel><text> 第56章 我来捡点破烂 </text></navLabel><content src="index.html#dir57"/></navPoint>
+<navPoint id="navpoint - 58" playOrder="58"><navLabel><text> 第57章 奇兽 </text></navLabel><content src="index.html#dir58"/></navPoint>
+<navPoint id="navpoint - 59" playOrder="59"><navLabel><text> 第58章 吓唬 </text></navLabel><content src="index.html#dir59"/></navPoint>
+<navPoint id="navpoint - 60" playOrder="60"><navLabel><text> 第58章 四目黄金神 </text></navLabel><content src="index.html#dir60"/></navPoint>
+<navPoint id="navpoint - 61" playOrder="61"><navLabel><text> 第60章 封山术 </text></navLabel><content src="index.html#dir61"/></navPoint>
+<navPoint id="navpoint - 62" playOrder="62"><navLabel><text> 第61章 上当了 </text></navLabel><content src="index.html#dir62"/></navPoint>
+<navPoint id="navpoint - 63" playOrder="63"><navLabel><text> 第62章 神的诅咒 </text></navLabel><content src="index.html#dir63"/></navPoint>
+<navPoint id="navpoint - 64" playOrder="64"><navLabel><text> 第63章 谁在说谎 </text></navLabel><content src="index.html#dir64"/></navPoint>
+<navPoint id="navpoint - 65" playOrder="65"><navLabel><text> 第64章 人是会变的 </text></navLabel><content src="index.html#dir65"/></navPoint>
+<navPoint id="navpoint - 66" playOrder="66"><navLabel><text> 第65章 神灵的使者 </text></navLabel><content src="index.html#dir66"/></navPoint>
+<navPoint id="navpoint - 67" playOrder="67"><navLabel><text> 第66章 进退两难 </text></navLabel><content src="index.html#dir67"/></navPoint>
+<navPoint id="navpoint - 68" playOrder="68"><navLabel><text> 第67章 蛊奴 </text></navLabel><content src="index.html#dir68"/></navPoint>
+<navPoint id="navpoint - 69" playOrder="69"><navLabel><text> 第68章 </text></navLabel><content src="index.html#dir69"/></navPoint>
+<navPoint id="navpoint - 70" playOrder="70"><navLabel><text> 第69章 我怎么会有你这样的弟子？ </text></navLabel><content src="index.html#dir70"/></navPoint>
+<navPoint id="navpoint - 71" playOrder="71"><navLabel><text> 第70章 得失 </text></navLabel><content src="index.html#dir71"/></navPoint>
+<navPoint id="navpoint - 72" playOrder="72"><navLabel><text> 第71章 音老爷子的目的 </text></navLabel><content src="index.html#dir72"/></navPoint>
+<navPoint id="navpoint - 73" playOrder="73"><navLabel><text> 第72章 可怜鬼 </text></navLabel><content src="index.html#dir73"/></navPoint>
+<navPoint id="navpoint - 74" playOrder="74"><navLabel><text> 第73章 尸骨 </text></navLabel><content src="index.html#dir74"/></navPoint>
+<navPoint id="navpoint - 75" playOrder="75"><navLabel><text> 第74章 走阴 </text></navLabel><content src="index.html#dir75"/></navPoint>
+<navPoint id="navpoint - 76" playOrder="76"><navLabel><text> 第75章 给你脸你不要 </text></navLabel><content src="index.html#dir76"/></navPoint>
+<navPoint id="navpoint - 77" playOrder="77"><navLabel><text> 第76章 不想当将军的士兵不是好士兵 </text></navLabel><content src="index.html#dir77"/></navPoint>
+<navPoint id="navpoint - 78" playOrder="78"><navLabel><text> 第77章 堪比绿僵 </text></navLabel><content src="index.html#dir78"/></navPoint>
+<navPoint id="navpoint - 79" playOrder="79"><navLabel><text> 第78章 穷凶极恶 </text></navLabel><content src="index.html#dir79"/></navPoint>
+<navPoint id="navpoint - 80" playOrder="80"><navLabel><text> 第79章 前男友是拿来诅咒的 </text></navLabel><content src="index.html#dir80"/></navPoint>
+<navPoint id="navpoint - 81" playOrder="81"><navLabel><text> 第80章 她不可能死的 </text></navLabel><content src="index.html#dir81"/></navPoint>
+<navPoint id="navpoint - 82" playOrder="82"><navLabel><text> 第81章 故意弄丢 </text></navLabel><content src="index.html#dir82"/></navPoint>
+<navPoint id="navpoint - 83" playOrder="83"><navLabel><text> 第82章 原由 </text></navLabel><content src="index.html#dir83"/></navPoint>
+<navPoint id="navpoint - 84" playOrder="84"><navLabel><text> 第83章 线索断了 </text></navLabel><content src="index.html#dir84"/></navPoint>
+<navPoint id="navpoint - 85" playOrder="85"><navLabel><text> 第84章 怨气 </text></navLabel><content src="index.html#dir85"/></navPoint>
+<navPoint id="navpoint - 86" playOrder="86"><navLabel><text> 第85章 下葬 </text></navLabel><content src="index.html#dir86"/></navPoint>
+<navPoint id="navpoint - 87" playOrder="87"><navLabel><text> 第86章 大白鼠的天赋 </text></navLabel><content src="index.html#dir87"/></navPoint>
+<navPoint id="navpoint - 88" playOrder="88"><navLabel><text> 第87章 天生双瞳 </text></navLabel><content src="index.html#dir88"/></navPoint>
+<navPoint id="navpoint - 89" playOrder="89"><navLabel><text> 第88章 决定（推荐票加更） </text></navLabel><content src="index.html#dir89"/></navPoint>
+<navPoint id="navpoint - 90" playOrder="90"><navLabel><text> 第89章 跳楼 </text></navLabel><content src="index.html#dir90"/></navPoint>
+<navPoint id="navpoint - 91" playOrder="91"><navLabel><text> 第90章 不简单 </text></navLabel><content src="index.html#dir91"/></navPoint>
+<navPoint id="navpoint - 92" playOrder="92"><navLabel><text> 第91章 福不超三代 </text></navLabel><content src="index.html#dir92"/></navPoint>
+<navPoint id="navpoint - 93" playOrder="93"><navLabel><text> 第92章 搞定 </text></navLabel><content src="index.html#dir93"/></navPoint>
+<navPoint id="navpoint - 94" playOrder="94"><navLabel><text> 第93章 第一次开张 </text></navLabel><content src="index.html#dir94"/></navPoint>
+<navPoint id="navpoint - 95" playOrder="95"><navLabel><text> 第94章 无言的默契 </text></navLabel><content src="index.html#dir95"/></navPoint>
+<navPoint id="navpoint - 96" playOrder="96"><navLabel><text> 第94章 高人啊 </text></navLabel><content src="index.html#dir96"/></navPoint>
+<navPoint id="navpoint - 97" playOrder="97"><navLabel><text> 第96章 天赋 </text></navLabel><content src="index.html#dir97"/></navPoint>
+<navPoint id="navpoint - 98" playOrder="98"><navLabel><text> 第97章 有事相求 </text></navLabel><content src="index.html#dir98"/></navPoint>
+<navPoint id="navpoint - 99" playOrder="99"><navLabel><text> 第98章 青龙山 </text></navLabel><content src="index.html#dir99"/></navPoint>
+<navPoint id="navpoint - 100" playOrder="100"><navLabel><text> 第99章 水楼 </text></navLabel><content src="index.html#dir100"/></navPoint>
+<navPoint id="navpoint - 101" playOrder="101"><navLabel><text> 第100章 委屈 </text></navLabel><content src="index.html#dir101"/></navPoint>
+<navPoint id="navpoint - 102" playOrder="102"><navLabel><text> 第101章 这世上还是正义的人居多的 </text></navLabel><content src="index.html#dir102"/></navPoint>
+<navPoint id="navpoint - 103" playOrder="103"><navLabel><text> 第102章 第二单生意 </text></navLabel><content src="index.html#dir103"/></navPoint>
+<navPoint id="navpoint - 104" playOrder="104"><navLabel><text> 第103章 九指神算 </text></navLabel><content src="index.html#dir104"/></navPoint>
+<navPoint id="navpoint - 105" playOrder="105"><navLabel><text> 第104章 我像坏人吗？ </text></navLabel><content src="index.html#dir105"/></navPoint>
+<navPoint id="navpoint - 106" playOrder="106"><navLabel><text> 上架感言 </text></navLabel><content src="index.html#dir106"/></navPoint>
+<navPoint id="navpoint - 107" playOrder="107"><navLabel><text> 第105章 人形暴走野兽（第一更） </text></navLabel><content src="index.html#dir107"/></navPoint>
+<navPoint id="navpoint - 108" playOrder="108"><navLabel><text> 第106章 剑道天才乎？ </text></navLabel><content src="index.html#dir108"/></navPoint>
+
+</navMap>
+</ncx>

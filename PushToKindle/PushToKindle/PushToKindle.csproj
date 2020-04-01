@@ -51,6 +51,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestOptions.cs" />
+    <Compile Include="SendEmail.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -59,6 +60,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="KindleGen\index.html" />
     <Content Include="KindleGen\kindlegen.exe" />
     <Content Include="KindleGen\style.css" />
   </ItemGroup>
