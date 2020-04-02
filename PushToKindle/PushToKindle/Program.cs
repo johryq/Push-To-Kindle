@@ -18,9 +18,12 @@ namespace PushToKindle
     {
         static void Main(string[] args)
         {
+            BookInfo.FilePath = AppDomain.CurrentDomain.BaseDirectory;
             HtmlToKindle ht = new HtmlToKindle();
             //ht.CureatHtml(html,books);
-
+            EmailHelper email = new EmailHelper();
+            email.SendMail(new List<string> { "@kindle.com" }, BookInfo.BookName, "", new Dictionary<string, string> { { BookInfo.BookName,BookInfo.FilePath} }) ;
+            //email.SendEmail();
             #region old
             //RequestOptions options = new RequestOptions();
             //options.Uri = new Uri("https://www.biquge5200.cc/130_130510/");

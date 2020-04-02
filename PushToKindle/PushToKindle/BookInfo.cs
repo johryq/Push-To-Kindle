@@ -8,6 +8,7 @@ namespace PushToKindle
 {
     public static class BookInfo
     {
+        public static string FilePath { get; set; }
         public static string BookName { get; set; }
         public static string Auther { get; set; }
         public static string CureateTime { get; set; }

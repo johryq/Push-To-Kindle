@@ -11,12 +11,11 @@ namespace PushToKindle
     {
         public void CureatHtml(List<BookContent> books)
         {
-            string path = AppDomain.CurrentDomain.BaseDirectory;
+            string path = BookInfo.FilePath;
             string opfPath = Path.Combine(path + "../../KindleGen/bookInfo.opf");
             string tocPath = Path.Combine(path + "../../KindleGen/toc.ncx");
             string htmlPath = Path.Combine(path + "../../KindleGen/index.html");
             string cssPath = Path.Combine(path + "../../KindleGen/style.css");
-
 
             using (StreamReader reader = new StreamReader(opfPath, Encoding.UTF8))
             {
