@@ -32,3 +32,16 @@ Charset应该设置成
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 ```
+
+5.编码
+
+```bash
+信息(prcgen):I1045: 本书中使用 UNICODE 范围计算
+信息(prcgen):I1046: 已发现的 UNICODE 范围：Basic Latin [20..7E]
+信息(prcgen):I1046: 已发现的 UNICODE 范围：CJK Unified Ideographs [4E00..9FFF]
+信息(prcgen):I1046: 已发现的 UNICODE 范围：General Punctuation - Windows 1252 [201C..201E]
+信息(prcgen):I1046: 已发现的 UNICODE 范围：Halfwidth and Fullwidth Forms [FF00..FFEF]
+信息(prcgen):I1046: 已发现的 UNICODE 范围：Chinese, Japanese, and Korean (CJK) Symbols and Punctuation [3000..303F]
+信息(prcgen):I1046: 已发现的 UNICODE 范围：Letter-like Symbols [2100..214F]
+信息(prcgen):I1046: 已发现的 UNICODE 范围：Latin Extended-A [100..17F]
+```

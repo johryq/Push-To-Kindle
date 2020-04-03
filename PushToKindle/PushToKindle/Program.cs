@@ -19,10 +19,7 @@ namespace PushToKindle
         static void Main(string[] args)
         {
             BookInfo.FilePath = AppDomain.CurrentDomain.BaseDirectory;
-            HtmlToKindle ht = new HtmlToKindle();
-            //ht.CureatHtml(html,books);
-            EmailHelper email = new EmailHelper();
-            email.SendMail(new List<string> { "@kindle.com" }, BookInfo.BookName, "", new Dictionary<string, string> { { BookInfo.BookName,BookInfo.FilePath} }) ;
+           
             //email.SendEmail();
             #region old
             //RequestOptions options = new RequestOptions();
@@ -90,11 +87,15 @@ namespace PushToKindle
                     Thread.Sleep(300);
                     x++;
                 }
-                //if (x > 10)
-                //{
-                //    break;
-                //}
             }
+            //生成制作mobi文件所需html,ncx,opf,css
+            HtmlToKindle ht = new HtmlToKindle();
+            //调用KindleGen生成Mobi文件
+            Helper hp = new Helper();
+            hp.CmdHelper();
+            //向我的Kindle邮箱发送该文件
+            EmailHelper email = new EmailHelper();
+            email.SendMail(new List<string> { "@kindle.com" }, BookInfo.BookName, "", new Dictionary<string, string> { { BookInfo.BookName, BookInfo.FilePath } });
             ht.CureatHtml(books);
             Console.WriteLine($"加载{books.Count}耗时{sp.Elapsed.TotalSeconds}");
             Console.ReadKey();
