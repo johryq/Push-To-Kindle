@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushToKindle", "PushToKindle\PushToKindle.csproj", "{5AEC769F-2730-4A82-ABCC-33CA125E6DE2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushToKindleWPF", "PushToKindleWPF\PushToKindleWPF.csproj", "{69B66AD0-0435-4B3B-B7B3-88270291D991}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushToKindleWinForm", "PushToKindleWinForm\PushToKindleWinForm.csproj", "{3DD6B935-D60B-497F-B748-DF7F229CE6EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{5AEC769F-2730-4A82-ABCC-33CA125E6DE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AEC769F-2730-4A82-ABCC-33CA125E6DE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AEC769F-2730-4A82-ABCC-33CA125E6DE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69B66AD0-0435-4B3B-B7B3-88270291D991}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69B66AD0-0435-4B3B-B7B3-88270291D991}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69B66AD0-0435-4B3B-B7B3-88270291D991}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69B66AD0-0435-4B3B-B7B3-88270291D991}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DD6B935-D60B-497F-B748-DF7F229CE6EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DD6B935-D60B-497F-B748-DF7F229CE6EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DD6B935-D60B-497F-B748-DF7F229CE6EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DD6B935-D60B-497F-B748-DF7F229CE6EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
