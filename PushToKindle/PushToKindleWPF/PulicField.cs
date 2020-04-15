@@ -8,6 +8,9 @@ namespace PushToKindleWPF
 {
     public static class PulicField
     {
-        public static string BookName { get; set; }
+        /// <summary>
+        /// 程序所在目录
+        /// </summary>
+        public static readonly string AppPath = AppDomain.CurrentDomain.BaseDirectory;
     }
 }

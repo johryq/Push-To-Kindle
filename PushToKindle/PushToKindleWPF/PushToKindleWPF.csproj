@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Kindle\BookContent.cs" />
+    <Compile Include="Kindle\BookInfo.cs" />
+    <Compile Include="Kindle\KindleHelper.cs" />
     <Compile Include="PulicField.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -87,6 +90,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Kindle\MobiExample\bookInfo.opf" />
+    <None Include="Kindle\MobiExample\toc.ncx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -95,8 +100,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Img\" />
+    <Resource Include="Img\1.png" />
+    <Resource Include="Img\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Kindle\MobiExample\index.html" />
+    <Content Include="Kindle\MobiExample\kindlegen.exe" />
+    <Content Include="Kindle\MobiExample\style.css" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

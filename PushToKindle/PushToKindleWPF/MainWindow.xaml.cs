@@ -24,9 +24,13 @@ namespace PushToKindleWPF
         {
             InitializeComponent();
             double DGCol = window1.Width - 200;
-            
         }
 
+        /// <summary>
+        /// 搜索框获取焦点
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BookNameTxt_GotFocus(object sender, RoutedEventArgs e)
         {
             if (this.Focusable)
@@ -37,6 +41,11 @@ namespace PushToKindleWPF
             }
         }
 
+        /// <summary>
+        /// 搜索框按下按键
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BookNameTxt_KeyDown(object sender, KeyEventArgs e)
         {
 
@@ -50,11 +59,12 @@ namespace PushToKindleWPF
                 {
                     BookInfo.Visibility = Visibility.Visible;
                     labInfo.Visibility = Visibility.Hidden;
-                    PulicField.BookName = BookNameTxt.Text.Trim();
+                    Kindle.BookInfo.BookName = BookNameTxt.Text.Trim();
                     TabControl.SelectedIndex = 2;
                 }
             }
         }
+
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -62,6 +72,11 @@ namespace PushToKindleWPF
             //MessageBox.Show(sender.ToString());
         }
 
+        /// <summary>
+        /// 搜索框检测
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BookNameTxt_LostFocus(object sender, RoutedEventArgs e)
         {
             BookNameTxt.BorderBrush = new SolidColorBrush(Color.FromRgb(171, 173, 179));
@@ -75,6 +90,62 @@ namespace PushToKindleWPF
         private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Book.Visibility = Visibility.Visible;
+        }
+
+        /// <summary>
+        /// 查看详细信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void labBookName_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            
+        }
+
+        /// <summary>
+        /// 向kindle邮箱推送
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnPush_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 制作mobi文件至本地
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDown_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 选择下载
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSelect_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnSaveSite_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtEmailPwd.Text.Trim()) && !string.IsNullOrWhiteSpace(txtReceiveEmail.Text.Trim()) && !string.IsNullOrWhiteSpace(txtSendEmail.Text.Trim()))
+            {
+                labSiteInfo.Visibility = Visibility.Visible;
+                labSiteInfo.Foreground = new SolidColorBrush(Color.FromRgb(0, 255, 0));
+                labSiteInfo.Content = "保存成功";
+            }
+            else
+            {
+                labSiteInfo.Foreground = new SolidColorBrush(Color.FromRgb(255, 0, 0));
+                labSiteInfo.Content = "输入不能为空!!!";
+                labSiteInfo.Visibility = Visibility.Visible;
+            }
         }
     }
 }

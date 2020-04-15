@@ -17,7 +17,7 @@
                     Grid.ColumnSpan="2" Margin="-3,0,-3,-29" Foreground="{x:Null}" 
                     SelectionChanged="TabControl_SelectionChanged">
 
-            <TabItem Name="Main" Header="主页" Width="100" Height="50" Margin="2,0,-20,0"  FontSize="15" Background="{x:Null}" BorderBrush="{x:Null}">
+            <TabItem Name="Main" Header="主页" Width="100" Height="50" Margin="11,0,-11,0"  FontSize="15" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Left">
                 <Grid Background="White">
                     <TextBox x:Name="BookNameTxt" Height="35" Margin="100,140,100,220" TextAlignment="Center" FontSize="20" Foreground="Gray" 
                              GotFocus="BookNameTxt_GotFocus" 
@@ -28,13 +28,25 @@
             </TabItem>
             <TabItem Name="Site" Header="设置" Width="100" Height="50" Margin="20,0,-20,0" FontSize="15" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <Grid Background="White">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="91*"/>
+                        <ColumnDefinition Width="207*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="邮          箱:" HorizontalAlignment="Left" Margin="104,71,0,0" VerticalAlignment="Top"/>
+                    <Label Content="邮箱   密码:" HorizontalAlignment="Left" Margin="105,111,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Kindle邮箱:" HorizontalAlignment="Left" Margin="104,156,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtSendEmail" HorizontalAlignment="Left" Height="25" Margin="211,70,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="295" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="txtEmailPwd" HorizontalAlignment="Left" Height="25" Margin="211,111,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="295" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="txtReceiveEmail" HorizontalAlignment="Left" Height="25" Margin="210,155,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="295" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btnSaveSite" Content="保存设置" HorizontalAlignment="Left" Margin="297,157,0,0" VerticalAlignment="Top" Width="75" Click="btnSaveSite_Click" Grid.Column="1"/>
+                    <Label Name="labSiteInfo" Content="" HorizontalAlignment="Left" Margin="213,200,0,0" VerticalAlignment="Top" Foreground="Red" Visibility="Hidden"/>
 
                 </Grid>
             </TabItem>
-            
+
             <TabItem Name="BookInfo"  Header="搜索筛选页" Width="100" Height="50" Margin="20,0,-20,0" FontSize="15" Background="{x:Null}" BorderBrush="{x:Null}" Visibility="Visible">
                 <Grid Background="White">
-                    <Image Grid.ColumnSpan="1" HorizontalAlignment="Left" Height="144" Margin="10,8,0,0" VerticalAlignment="Top" Width="118" Source="Img/" Stretch="Fill"/>
+                    <Image Grid.ColumnSpan="1" HorizontalAlignment="Left" Height="144" Margin="10,8,0,0" VerticalAlignment="Top" Width="118" Source="Img/2.png" Stretch="Fill" />
                     <DataGrid HorizontalAlignment="Left" Height="350" VerticalAlignment="Top" Width="{Binding  ActualWidth, ElementName=window1, Mode=OneWay}"  Margin="3,162,-9,0" MouseDoubleClick="DataGrid_MouseDoubleClick">
                         <DataGrid.Columns>
                             <DataGridCheckBoxColumn Header="网站" Width="200" />
@@ -43,10 +55,11 @@
                                          Binding="{Binding Email}"/>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Label Name="labBookName" Content="查看详细信息" FontSize="15" HorizontalAlignment="Left" Margin="169,7,0,0" VerticalAlignment="Top"/>
-                    <Button Content="Button" HorizontalAlignment="Left" Margin="174,88,0,0" VerticalAlignment="Top" Width="75"/>
-                    <Button Content="Button" HorizontalAlignment="Left" Margin="434,91,0,0" VerticalAlignment="Top" Width="75"/>
-                    <Button Content="Button" HorizontalAlignment="Left" Margin="601,91,0,0" VerticalAlignment="Top" Width="75"/>
+                    <Label Name="labBookName" Content="查看详细信息" FontSize="15" HorizontalAlignment="Left" Margin="169,7,0,0" VerticalAlignment="Top" MouseDoubleClick="labBookName_MouseDoubleClick"/>
+                    <Button x:Name="btnPush" Content="向我的Kindle推送" HorizontalAlignment="Left" Margin="174,88,0,0" VerticalAlignment="Top" Width="145" Click="btnPush_Click"/>
+                    <Button x:Name="btnDown" Content="下载至本地" HorizontalAlignment="Left" Margin="173,116,0,0" VerticalAlignment="Top" Width="145" Click="btnDown_Click"/>
+                    <Button x:Name="btnSelect" Content="选择章节" HorizontalAlignment="Left" Margin="601,91,0,0" VerticalAlignment="Top" Width="75" Click="btnSelect_Click"/>
+                    <Label x:Name="labWeb" Content="网站:" FontSize="15" HorizontalAlignment="Left" Margin="170,36,0,0" VerticalAlignment="Top"/>
                     <!--<Label Name="labAuthor"  Content="作者" FontSize="15" HorizontalAlignment="Left" Margin="548,8,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="labBookInfo" Content="简介:" FontSize="15" HorizontalAlignment="Left" Margin="170,33,0,0" VerticalAlignment="Top"/>-->
                 </Grid>
@@ -54,7 +67,7 @@
 
             <TabItem Name="Book" Header="书名" Width="100" Height="50" Margin="20,0,-20,0" FontSize="15" Background="{x:Null}" BorderBrush="{x:Null}" Visibility="Visible">
                 <Grid Background="White" Margin="4,-1,-4,1">
-                   
+
                 </Grid>
             </TabItem>
         </TabControl>

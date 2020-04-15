@@ -13,3 +13,4 @@ E:\Code\2020\KindleBook\PushToKindle\PushToKindleWPF\obj\Debug\PushToKindleWPF.c
 E:\Code\2020\KindleBook\PushToKindle\PushToKindleWPF\obj\Debug\PushToKindleWPF.csproj.CoreCompileInputs.cache
 E:\Code\2020\KindleBook\PushToKindle\PushToKindleWPF\obj\Debug\PushToKindleWPF.exe
 E:\Code\2020\KindleBook\PushToKindle\PushToKindleWPF\obj\Debug\PushToKindleWPF.pdb
+E:\Code\2020\KindleBook\PushToKindle\PushToKindleWPF\obj\Debug\PushToKindleWPF_Content.g.cs
