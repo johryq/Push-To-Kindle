@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HtmlAgilityPack;
 
 namespace PushToKindleWPF
 {
@@ -57,14 +59,32 @@ namespace PushToKindleWPF
                 }
                 else
                 {
+                    string searchBook = BookNameTxt.Text.Trim();
                     BookInfo.Visibility = Visibility.Visible;
                     labInfo.Visibility = Visibility.Hidden;
-                    Kindle.BookInfo.BookName = BookNameTxt.Text.Trim();
+                    //搜索请求
+                    Search_Biquge5200Cc(searchBook);
+                    
+                    
+                    
+
+                    //Kindle.BookInfo.BookName = BookNameTxt.Text.Trim();
                     TabControl.SelectedIndex = 2;
                 }
             }
         }
-
+        private void Search_Biquge5200Cc(string searchBook)
+        {
+            HttpWebRequest searchRequest = Request.ResqestHelper.IniRequest("https://www.biquge5200.cc/modules/article/search.php?searchkey=" + searchBook);
+            string html = Request.ResqestHelper.GetUzipResponse(searchRequest);
+            List<Object.SearchInfo_Biquge5200Cc> searchInfos_Biquge5200Cc = new List<Object.SearchInfo_Biquge5200Cc>();
+            var doc = new HtmlDocument();
+            doc.LoadHtml(html);
+            HtmlNodeCollection bookNodes = doc.DocumentNode.SelectNodes("/td[@class=odd]");
+            HtmlNodeCollection chapterNodes = doc.DocumentNode.SelectNodes("/td[@class=even]");
+            HtmlNodeCollection autherNodes = doc.DocumentNode.SelectNodes("/td[@class=odd]");
+            HtmlNodeCollection dataNodes = doc.DocumentNode.SelectNodes("/td[@class=odd]");
+        }
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

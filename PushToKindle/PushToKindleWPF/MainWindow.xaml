@@ -49,10 +49,14 @@
                     <Image Grid.ColumnSpan="1" HorizontalAlignment="Left" Height="144" Margin="10,8,0,0" VerticalAlignment="Top" Width="118" Source="Img/2.png" Stretch="Fill" />
                     <DataGrid HorizontalAlignment="Left" Height="350" VerticalAlignment="Top" Width="{Binding  ActualWidth, ElementName=window1, Mode=OneWay}"  Margin="3,162,-9,0" MouseDoubleClick="DataGrid_MouseDoubleClick">
                         <DataGrid.Columns>
-                            <DataGridCheckBoxColumn Header="网站" Width="200" />
-                            <DataGridCheckBoxColumn Header="最新章节" Width="700"/>
-                            <DataGridHyperlinkColumn Header="链接" Width="150" 
-                                         Binding="{Binding Email}"/>
+                            <DataGridTextColumn x:Name="ID" IsReadOnly="True" Width="0"/>
+                            <DataGridTextColumn Header="书名" Width="100" />
+                            <DataGridTextColumn Header="作者" Width="100"/>
+                            <DataGridTextColumn Header="日期" Width="100"/>
+                            <DataGridTextColumn Header="最新章节" Width="300"/>
+                            
+                            
+                            
                         </DataGrid.Columns>
                     </DataGrid>
                     <Label Name="labBookName" Content="查看详细信息" FontSize="15" HorizontalAlignment="Left" Margin="169,7,0,0" VerticalAlignment="Top" MouseDoubleClick="labBookName_MouseDoubleClick"/>

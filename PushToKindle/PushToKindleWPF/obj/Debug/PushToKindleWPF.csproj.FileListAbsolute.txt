@@ -14,3 +14,7 @@ E:\Code\2020\KindleBook\PushToKindle\PushToKindleWPF\obj\Debug\PushToKindleWPF.c
 E:\Code\2020\KindleBook\PushToKindle\PushToKindleWPF\obj\Debug\PushToKindleWPF.exe
 E:\Code\2020\KindleBook\PushToKindle\PushToKindleWPF\obj\Debug\PushToKindleWPF.pdb
 E:\Code\2020\KindleBook\PushToKindle\PushToKindleWPF\obj\Debug\PushToKindleWPF_Content.g.cs
+E:\Code\2020\KindleBook\PushToKindle\PushToKindleWPF\bin\Debug\System.Data.SQLite.dll
+E:\Code\2020\KindleBook\PushToKindle\PushToKindleWPF\bin\Debug\System.Data.SQLite.xml
+E:\Code\2020\KindleBook\PushToKindle\PushToKindleWPF\bin\Debug\System.Data.SQLite.dll.config
+E:\Code\2020\KindleBook\PushToKindle\PushToKindleWPF\obj\Debug\PushToKindleWPF.csproj.CopyComplete
