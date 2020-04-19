@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PushToKindleWPF"
         mc:Ignorable="d"
-        Title="PushToKindle_V0.1" Height="550" Width="900" Name="window1" ResizeMode="NoResize">
+        Title="PushToKindle_V0.1" Height="550" Width="900" Name="window1" ResizeMode="CanResizeWithGrip" WindowStyle="ThreeDBorderWindow" Loaded="window1_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="29*"/>
@@ -36,10 +36,11 @@
                     <Label Content="邮箱   密码:" HorizontalAlignment="Left" Margin="105,111,0,0" VerticalAlignment="Top"/>
                     <Label Content="Kindle邮箱:" HorizontalAlignment="Left" Margin="104,156,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="txtSendEmail" HorizontalAlignment="Left" Height="25" Margin="211,70,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="295" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="txtEmailPwd" HorizontalAlignment="Left" Height="25" Margin="211,111,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="295" Grid.ColumnSpan="2"/>
+                    <PasswordBox x:Name="txtEmailPwd" HorizontalAlignment="Left" Height="25" Margin="211,111,0,0" VerticalAlignment="Top" Width="295" Grid.ColumnSpan="2"/>
                     <TextBox x:Name="txtReceiveEmail" HorizontalAlignment="Left" Height="25" Margin="210,155,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="295" Grid.ColumnSpan="2"/>
                     <Button x:Name="btnSaveSite" Content="保存设置" HorizontalAlignment="Left" Margin="297,157,0,0" VerticalAlignment="Top" Width="75" Click="btnSaveSite_Click" Grid.Column="1"/>
-                    <Label Name="labSiteInfo" Content="" HorizontalAlignment="Left" Margin="213,200,0,0" VerticalAlignment="Top" Foreground="Red" Visibility="Hidden"/>
+                    <Label Name="labSiteInfo" Content="" HorizontalAlignment="Left" Margin="120,200,0,0" VerticalAlignment="Top" Foreground="Red" Visibility="Hidden"/>
+                    <Button x:Name="btnDel" Content="删除设置" HorizontalAlignment="Left" Margin="298,127,0,0" VerticalAlignment="Top" Width="75" Click="btnDel_Click" Grid.Column="1"/>
 
                 </Grid>
             </TabItem>
@@ -47,35 +48,38 @@
             <TabItem Name="BookInfo"  Header="搜索筛选页" Width="100" Height="50" Margin="20,0,-20,0" FontSize="15" Background="{x:Null}" BorderBrush="{x:Null}" Visibility="Visible">
                 <Grid Background="White">
                     <Image Grid.ColumnSpan="1" HorizontalAlignment="Left" Height="144" Margin="10,8,0,0" VerticalAlignment="Top" Width="118" Source="Img/2.png" Stretch="Fill" />
-                    <DataGrid HorizontalAlignment="Left" Height="350" VerticalAlignment="Top" Width="{Binding  ActualWidth, ElementName=window1, Mode=OneWay}"  Margin="3,162,-9,0" MouseDoubleClick="DataGrid_MouseDoubleClick">
+                    <DataGrid x:Name="DateGridBookInfo"   Margin="0,162,2,0" MouseDoubleClick="DataGrid_MouseDoubleClick" SelectionChanged="DateGridBookInfo_SelectionChanged" HorizontalAlignment="Stretch" VerticalAlignment="Top" SelectionMode="Single" ScrollViewer.VerticalScrollBarVisibility="Hidden" AutoGenerateColumns="False" CanUserDeleteRows="False" CanUserAddRows="False">
                         <DataGrid.Columns>
-                            <DataGridTextColumn x:Name="ID" IsReadOnly="True" Width="0"/>
-                            <DataGridTextColumn Header="书名" Width="100" />
-                            <DataGridTextColumn Header="作者" Width="100"/>
-                            <DataGridTextColumn Header="日期" Width="100"/>
-                            <DataGridTextColumn Header="最新章节" Width="300"/>
-                            
-                            
-                            
+                            <DataGridTextColumn x:Name="ID" IsReadOnly="True" Binding="{Binding BookLink}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="书名" Width="200" Binding="{Binding BookName ,Mode=OneWay}" />
+                            <DataGridTextColumn Header="作者" Width="100" Binding="{Binding Auther ,Mode=OneWay}" />
+                            <DataGridTextColumn Header="日期" Width="100" Binding="{Binding Date ,Mode=OneWay}" />
+                            <DataGridTextColumn Header="字数" Width="100" Binding="{Binding WordCount ,Mode=OneWay}" />
+                            <DataGridTextColumn Header="最新章节" Width="auto" Binding="{Binding LatestChapter ,Mode=OneWay}" />
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Label Name="labBookName" Content="查看详细信息" FontSize="15" HorizontalAlignment="Left" Margin="169,7,0,0" VerticalAlignment="Top" MouseDoubleClick="labBookName_MouseDoubleClick"/>
-                    <Button x:Name="btnPush" Content="向我的Kindle推送" HorizontalAlignment="Left" Margin="174,88,0,0" VerticalAlignment="Top" Width="145" Click="btnPush_Click"/>
-                    <Button x:Name="btnDown" Content="下载至本地" HorizontalAlignment="Left" Margin="173,116,0,0" VerticalAlignment="Top" Width="145" Click="btnDown_Click"/>
-                    <Button x:Name="btnSelect" Content="选择章节" HorizontalAlignment="Left" Margin="601,91,0,0" VerticalAlignment="Top" Width="75" Click="btnSelect_Click"/>
-                    <Label x:Name="labWeb" Content="网站:" FontSize="15" HorizontalAlignment="Left" Margin="170,36,0,0" VerticalAlignment="Top"/>
+                    <Label Name="labBookName" Content="查看详细信息" FontSize="15" HorizontalAlignment="Left" Margin="169,7,0,0" VerticalAlignment="Top" MouseDoubleClick="labBookName_MouseDoubleClick" Visibility="Hidden"/>
+                    <Button x:Name="btnPush" Content="向我的Kindle推送" HorizontalAlignment="Right" Margin="0,30,130,0" VerticalAlignment="Top" Width="145" Click="btnPush_Click"/>
+                    <Button x:Name="btnDown" Content="下载至本地" HorizontalAlignment="Right" Margin="0,100,130,0" VerticalAlignment="Top" Width="145" Click="btnDown_Click"/>
+                    <Button x:Name="btnSelect" Content="选择章节" HorizontalAlignment="Left" Margin="581,33,0,0" VerticalAlignment="Top" Width="75" Click="btnSelect_Click" Visibility="Hidden"/>
+                    <Label x:Name="labinfo3" Content="请选中您要下载的书籍" FontSize="15" HorizontalAlignment="Left" Margin="150,30,0,0" VerticalAlignment="Top" Visibility="Visible"/>
+
                     <!--<Label Name="labAuthor"  Content="作者" FontSize="15" HorizontalAlignment="Left" Margin="548,8,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="labBookInfo" Content="简介:" FontSize="15" HorizontalAlignment="Left" Margin="170,33,0,0" VerticalAlignment="Top"/>-->
                 </Grid>
             </TabItem>
 
-            <TabItem Name="Book" Header="书名" Width="100" Height="50" Margin="20,0,-20,0" FontSize="15" Background="{x:Null}" BorderBrush="{x:Null}" Visibility="Visible">
-                <Grid Background="White" Margin="4,-1,-4,1">
+            <TabItem Name="Book" Header="书名" Width="100" Height="50" Margin="20,0,-20,0" FontSize="15" Background="{x:Null}" BorderBrush="{x:Null}" Visibility="Hidden">
+                <Grid Background="White" Margin="4,4,4,4">
 
                 </Grid>
             </TabItem>
         </TabControl>
-
-
+        <Grid x:Name="grid1"  HorizontalAlignment="Left" Height="{Binding ActualHeight,ElementName=window1, Mode=OneWay}" Width="{Binding  ActualWidth, ElementName=window1, Mode=OneWay}" VerticalAlignment="Top"  Background="#33000000" Grid.ColumnSpan="2" Visibility="Hidden">
+            <ProgressBar x:Name="progressBar1" Height="35" Margin="150,263,150,263"  Grid.Column="1" Foreground="#FF0074FF"/>
+            <Label Name="labDown" Content="已下载完成:" Grid.Column="1"  Margin="600,200,150,200" VerticalAlignment="Top" Foreground="Red"/>
+            <Button x:Name="btnHiddenGrid" Content="关闭" HorizontalAlignment="Right" Margin="0,20,20,0" VerticalAlignment="Top" Width="75" Foreground="Red" Click="btnHiddenGrid_Click" Visibility="Hidden"/>
+            <!--<Button x:Name="btnDownInfo" Content="生成信息" HorizontalAlignment="Left" Margin="672,306,0,0" VerticalAlignment="Top" Width="75" Visibility="Hidden"/>-->
+        </Grid>
     </Grid>
 </Window>

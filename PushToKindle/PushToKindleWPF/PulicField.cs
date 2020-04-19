@@ -12,5 +12,7 @@ namespace PushToKindleWPF
         /// 程序所在目录
         /// </summary>
         public static readonly string AppPath = AppDomain.CurrentDomain.BaseDirectory;
+
+        public static string MobiPath = string.Empty;
     }
 }

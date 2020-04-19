@@ -15,17 +15,17 @@ namespace PushToKindleWPF.Kindle
 
         public void CureatHtml(List<BookContent> books)
         {
-            
-            string opfPath = Path.Combine(path + "../../MobiExample/bookInfo.opf");
-            string tocPath = Path.Combine(path + "../../MobiExample/toc.ncx");
-            string htmlPath = Path.Combine(path + "../../MobiExample/index.html");
-            string cssPath = Path.Combine(path + "../../MobiExample/style.css");
+            //模板文件
+            string opfPath = Path.Combine(path + "../../Kindle/MobiExample/bookInfo.opf");
+            string tocPath = Path.Combine(path + "../../Kindle/MobiExample/toc.ncx");
+            string htmlPath = Path.Combine(path + "../../Kindle/MobiExample/index.html");
+            string cssPath = Path.Combine(path + "../../Kindle/MobiExample/style.css");
 
             using (StreamReader reader = new StreamReader(opfPath, Encoding.UTF8))
             {
                 string text = reader.ReadToEnd();
                 text = text.Trim().Replace("作者", BookInfo.Auther).Replace("书名", BookInfo.BookName).Replace("时间", DateTime.Now.ToLongDateString());
-                File.WriteAllText(Path.Combine(path + "../../Mobi/bookinfo.opf"), text);
+                File.WriteAllText(Path.Combine(path ,$"../../Kindle/Mobi/Data/{BookInfo.BookName}.opf"), text);
             }
 
             using (StreamReader reader = new StreamReader(tocPath, Encoding.UTF8))
@@ -38,7 +38,7 @@ namespace PushToKindleWPF.Kindle
                 }
                 string text = reader.ReadToEnd();
                 text = text.Trim().Replace("书名", BookInfo.BookName).Replace("目录", sb.ToString());
-                File.WriteAllText(Path.Combine(path + "../../Mobi/toc.ncx"), text);
+                File.WriteAllText(Path.Combine(path + "../../Kindle/Mobi/Data/toc.ncx"), text);
             }
 
             using (StreamReader reader = new StreamReader(htmlPath, Encoding.UTF8))
@@ -52,15 +52,23 @@ namespace PushToKindleWPF.Kindle
 
                 string text = reader.ReadToEnd();
                 text = text.Trim().Replace("书名", BookInfo.BookName).Replace("内容", sb.ToString());
-                File.WriteAllText(Path.Combine(path + "../../Mobi/index.html"), text);
+                File.WriteAllText(Path.Combine(path + "../../Kindle/Mobi/Data/index.html"), text);
             }
-            File.Copy(cssPath, "../../Mobi/style.css");
+            try
+            {
+                File.Copy(cssPath, "../../Kindle/Mobi/Data/style.css");
+            }
+            catch
+            {
+
+            }
+            
         }
 
-        public bool CmdToKindleGen()
+        public string CmdToKindleGen()
         {
-            string kindleGenPath = Path.Combine(path, $"../../Kindle/KindleGen.exe");
-            string infoPath = Path.Combine(path, $"../../Kindle/Mobi/{BookInfo.BookName}.opf");
+            string kindleGenPath = Path.Combine(path, $"../../Kindle/MobiExample/KindleGen.exe");
+            string infoPath = Path.Combine(path, $"../../Kindle/Mobi/Data/{BookInfo.BookName}.opf");
             string cmdStr = $"\"{kindleGenPath}\"" + $" \"{infoPath}\"";
             try
             {
@@ -78,16 +86,21 @@ namespace PushToKindleWPF.Kindle
                 string strOuput = p.StandardOutput.ReadToEnd();
                 p.WaitForExit();
                 p.Close();
-                Console.WriteLine(strOuput);
-                Console.ReadKey();
-                return true;
+                PulicField.MobiPath = Path.Combine(path, $"../../Kindle/Mobi/{BookInfo.BookName}.mobi");
+                File.Copy(Path.Combine(path, $"../../Kindle/Mobi/Data/{BookInfo.BookName}.mobi"), PulicField.MobiPath);
+                return strOuput;
             }
-
             catch (Exception e)
             {
-                Console.WriteLine(e + "\nKindleGen 错误");
-                Console.ReadKey();
-                return false;
+                return e + "\nKindleGen 错误";
+            }
+            finally
+            {
+                string deltePath = Path.Combine(path, $"../../Kindle/Mobi/Data/");
+                foreach(string p in Directory.GetFileSystemEntries(deltePath))
+                {
+                    File.Delete(p);
+                }
             }
         }
     }

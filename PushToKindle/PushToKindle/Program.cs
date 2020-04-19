@@ -12,7 +12,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Diagnostics;
 
-namespace PushToKindle
+namespace PushToKindleWPF
 {
     class Program
     {

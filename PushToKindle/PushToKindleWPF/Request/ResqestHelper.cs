@@ -41,7 +41,8 @@ namespace PushToKindleWPF.Request
         public static string GetUzipResponse(HttpWebRequest request)
         {
             string result = string.Empty;
-            using (var response = (HttpWebResponse)request.GetResponse())
+            var response = (HttpWebResponse)request.GetResponse();
+            using (response)
             {
                 if (response.ContentEncoding.ToLower().Contains("gzip"))//解压
                 {
